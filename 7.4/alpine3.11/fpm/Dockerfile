@@ -1,5 +1,11 @@
 FROM nlss/base-alpine
 
+#
+# This Docker file is slightly modified version of:
+# https://github.com/docker-library/php/blob/master/7.4/alpine3.11/fpm/Dockerfile
+# Following libraries are downloaded below using ADD directive
+#
+
 ARG PHP_EXT_CONFIGURE_BINDL="https://raw.githubusercontent.com/docker-library/php/703a3d0a4e4c149bfd62fc3e7b71645f9496b178/7.4/alpine3.11/fpm/docker-php-ext-configure"
 ARG PHP_EXT_ENABLE_BINDL="https://raw.githubusercontent.com/docker-library/php/703a3d0a4e4c149bfd62fc3e7b71645f9496b178/7.4/alpine3.11/fpm/docker-php-ext-enable"
 ARG PHP_EXT_INSTALL_BINDL="https://raw.githubusercontent.com/docker-library/php/703a3d0a4e4c149bfd62fc3e7b71645f9496b178/7.4/alpine3.11/fpm/docker-php-ext-install"
