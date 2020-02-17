@@ -242,7 +242,7 @@ RUN set -eux; \
 		echo 'daemonize = no'; \
 		echo; \
 		echo '[www]'; \
-		echo 'listen = 9000'; \
+		echo 'listen = /var/run/php-fpm.sock'; \
 	} | tee php-fpm.d/zz-docker.conf
 
 ADD rootfs /
