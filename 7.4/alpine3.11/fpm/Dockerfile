@@ -245,7 +245,7 @@ RUN set -eux; \
 		echo 'listen = /var/run/php-fpm.sock'; \
 		echo 'listen.owner = www-data'; \
 		echo 'listen.group = www-data'; \
-		echo 'listen.mode = 0660';
+		echo 'listen.mode = 0660'; \
 	} | tee php-fpm.d/zz-docker.conf
 
 ADD rootfs /
