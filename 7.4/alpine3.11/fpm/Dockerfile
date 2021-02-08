@@ -209,6 +209,8 @@ WORKDIR /var/www/html
 
 RUN set -eux; \
 	cd /usr/local/etc; \
+	wget -O /usr/local/bin/attr https://gist.githubusercontent.com/xZero707/7a3fb3e12e7192c96dbc60d45b3dc91d/raw/f3e905e2f6c4b9496904c8251b51fbab99c600df/attr.sh; \
+	chmod a+x /usr/local/bin/attr; \
 	if [ -d php-fpm.d ]; then \
 		# for some reason, upstream's php-fpm.conf.default has "include=NONE/etc/php-fpm.d/*.conf"
 		sed 's!=NONE/!=!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; \
