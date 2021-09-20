@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+docker buildx create --use --name build --node build --driver-opt network=host
+
+# Build PHP versions
+PHP_VERSIONS="7.4"
+
+for TARGET_VERSION in ${PHP_VERSIONS}
+do
+  echo "> Building PHP${TARGET_VERSION}"
+
+  if [ ! -d "${TARGET_VERSION}" ]; then
+    echo "> Error: Context not found"
+    continue
+  fi
+
+  if [ ! -f "${TARGET_VERSION}/Dockerfile" ]; then
+    echo "> Error: Invalid context"
+    continue
+  fi 
+
+  docker buildx build --pull --push --platform "linux/amd64,linux/armhf,linux/aarch64" --tag "nlss/php-fpm:${TARGET_VERSION}" "${TARGET_VERSION}"
+done
+

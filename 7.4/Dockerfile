@@ -1,4 +1,4 @@
-FROM nlss/base-alpine
+FROM --platform=${TARGETPLATFORM} nlss/base-alpine
 
 #
 # This Docker file is slightly modified version of:
