@@ -1,3 +1,3 @@
 #!/bin/execlineb -P
 
-php-fpm -F
+/usr/local/sbin/php-fpm -F
