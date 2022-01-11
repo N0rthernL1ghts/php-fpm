@@ -1,4 +1,4 @@
-ARG ALPINE_VERSION=3.15
+ARG ALPINE_VERSION=latest
 ARG PHP_VERSION=7.4
 
 # Stage 1 - Prepare PHP and copy ENV
