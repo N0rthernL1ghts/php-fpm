@@ -1,5 +1,2 @@
-# php-fpm
-s6 supervised PHP-FPM
-
-
-# Work in progress
+# Abandoned project
+https://github.com/N0rthernL1ghts/php-fpm/issues/1
